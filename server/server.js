@@ -3,12 +3,15 @@ winston.handleExceptions(new winston.transports.File({ filename: 'logs/exception
 
 var express = require('express');
 var cors = require('cors');
+var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
 
 var port = 8080;
-var isProduction = (process.env.NODE_ENV === "production");
 
 var app = module.exports = express();
 app.use(cors());
+app.use(bodyParser.json());
+app.use(expressValidator());
 app.use(require('./api'));
 
 app.start = function() {

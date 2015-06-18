@@ -5,6 +5,7 @@
 var express = require('express');
 var router = express.Router();
 
+router.use('/arena', require('./arena'));
 router.use('/robot', require('./robot'));
 
 module.exports = router;

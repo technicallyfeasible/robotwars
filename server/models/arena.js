@@ -8,22 +8,34 @@ var Arena = function(width, height) {
 	this.height = height;
 	this.robots = [];
 };
-Arena.prototype.addRobot = function(robot, x, y) {
-	// decorate robot with position since this is only relevant in arena context
-	robot.arena = {
-		x: x,
-		y: y
-	};
-	robots.push(robot);
-};
-Arena.prototype.moveRobot = function(robot, movements) {
-	if (!robot.arena)
+
+/**
+ * Place the robot in the arena
+ * @param robot
+ */
+Arena.prototype.addRobot = function(robot) {
+	// add only once
+	if (this.robots.indexOf(robot) !== -1)
 		return;
-	// decorate robot with position since this is only relevant in arena context
-	robot.arena = {
-		x: x,
-		y: y
-	}
+	this.robots.push(robot);
+};
+
+/**
+ * Remove the robot from this arena
+ * @param robot
+ */
+Arena.prototype.removeRobot = function(robot) {
+	var index = this.robots.indexOf(robot);
+	if (index >= 0)
+		this.robots.splice(index, 1);
+};
+
+/**
+ * Get a list of currently placed robots
+ * @returns {Array}
+ */
+Arena.prototype.getRobots = function() {
+	return this.robots;
 };
 
 module.exports = Arena;

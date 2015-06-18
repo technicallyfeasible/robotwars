@@ -1,6 +1,7 @@
 var chai = require('chai');
 var assert = chai.assert;
 var Arena = require('../server/models/arena');
+var Robot = require('../server/models/robot');
 
 describe('Arena', function() {
 
