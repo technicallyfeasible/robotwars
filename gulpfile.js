@@ -16,7 +16,8 @@ gulp.task('test', [], function () {
 	$.util.log('Running tests.');
 	return gulp.src(src.testFiles)
 		.pipe(mocha({reporter: 'spec'}))
-		.once('error', function () {
+		.once('error', function (err) {
+			$.util.log(err);
 			this.emit('end');
 		});
 });

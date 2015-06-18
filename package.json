@@ -9,7 +9,7 @@
     "url": "https://github.com/technicallyfeasible/robotwars"
   },
   "scripts": {
-    "test": "mocha -R spec && karma run karma.conf"
+    "test": "mocha -R spec"
   },
   "dependencies": {
     "cors": "^2.7.1",
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "chai": "^3.0.0",
+    "eslint": "^0.23.0",
     "gulp-mocha": "^2.1.1"
   }
 }
