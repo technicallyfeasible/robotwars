@@ -1,0 +1,44 @@
+<div class="container">
+	<div class="row spc-b">
+		<div class="col col-xs-12">
+			<h2>Seat the Diner</h2>
+			<span>Guide each diner to their table without collisions. The table each diner needs to go to is marked with the corresponding number.</span>
+		</div>
+	</div>
+
+	<div class="row spc-b">
+		<div class="col col-xs-6">
+			<div><label>Arena size</label></div>
+			<select ng-options="s for s in sizeOptions" ng-model="size"></select>
+			<div><label>Number of diners</label></div>
+			<select ng-options="n for n in dinerOptions" ng-model="dinerCount"></select>
+		</div>
+		<div class="col col-xs-6">
+			<arena size="size"></arena>
+		</div>
+	</div>
+
+	<div class="row spc-b">
+		<div class="col col-xs-12">
+			<h4>Movement</h4>
+			<span>Use letters M (move forward), L (rotate left without moving) and R (rotate right without moving) to write down walking instructions.</span>
+		</div>
+	</div>
+
+	<div class="row spc-b">
+		<div class="col col-xs-12 col-md-6">
+			<div ng-repeat="diner in diners">
+				<label>Diner {{$index + 1}}</label>
+				<input type="text" class="form-control" ng-model="diner.moves"/>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col col-xs-12">
+			<div class="btn btn-default" ng-click="create()">new</div>
+			<div class="btn btn-default" ng-click="run()">GO!</div>
+		</div>
+	</div>
+
+</div>

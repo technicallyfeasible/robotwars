@@ -1,0 +1,18 @@
+body {
+}
+
+.spc-b {
+	margin-bottom: 20px;
+}
+
+
+.arena .line {
+	white-space: nowrap;
+	line-height: 0;
+}
+.arena .box {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #222;
+}

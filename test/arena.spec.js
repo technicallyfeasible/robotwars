@@ -20,6 +20,15 @@ describe('Arena', function() {
 		}).to.throw();
 	});
 
+	it('should not allow empty sizes', function() {
+		chai.expect(function() {
+			new Arena(5, null);
+		}).to.throw();
+		chai.expect(function() {
+			new Arena(null, 5);
+		}).to.throw();
+	});
+
 	it('should not allow negative sizes', function() {
 		chai.expect(function() {
 			new Arena(-1, 5);

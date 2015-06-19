@@ -14,6 +14,10 @@ app.use(bodyParser.json());
 app.use(expressValidator());
 app.use(require('./api'));
 
+// serve static client content for testing in dev environment
+if (process.env.NODE_ENV !== 'production')
+	app.use('/dev', express.static('client'));
+
 app.start = function() {
 	// start the web server
 	return app.listen(port, function() {
