@@ -1,11 +1,12 @@
+'use strict';
+
 /**
- * Created by Jens on 17.06.2015.
+ * Combines all api functions
  */
 
 var express = require('express');
 var router = express.Router();
 
 router.use('/arena', require('./arena'));
-router.use('/robot', require('./robot'));
 
 module.exports = router;

@@ -1,3 +1,5 @@
+'use strict';
+
 var Robot = require('./robot');
 
 var Arena = function(width, height) {

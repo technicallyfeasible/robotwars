@@ -1,23 +1,41 @@
 Robot Wars
 =================
 
+## Setup ##
+
+Install dependencies
+
+	npm install
+	
+Serve application
+
+	gulp
+	-> [http://localhost:3000/](http://localhost:3000/)
+	
+Dev interface for playing:
+
+	[http://localhost:3000/dev/index.html](http://localhost:3000/dev/index.html)
+
+
+
+
 ## Context ##
 
-A fleet of hand built robots are due to engage in battle for the annual “Robot Wars” competition. Each robot will be placed within a rectangular battle arena and will navigate their way around the arena using a built in computer system.
+A fleet of hand built robots are due to engage in battle for the annual â€œRobot Warsâ€ competition. Each robot will be placed within a rectangular battle arena and will navigate their way around the arena using a built in computer system.
 
-A robot’s location and heading is represented by a combination of x and y co-ordinates and a letter representing one of the four cardinal compass points. The arena is divided up into a grid to simplify navigation. An example position might be 0, 0, N which means the robot is in the bottom left corner and facing North.
+A robotâ€™s location and heading is represented by a combination of x and y co-ordinates and a letter representing one of the four cardinal compass points. The arena is divided up into a grid to simplify navigation. An example position might be 0, 0, N which means the robot is in the bottom left corner and facing North.
 
 Build an API that the competition organisers can integrate with in order to move and navigate the robot. The only prerequisite is the API should be written in Node JS and responses should be in JSON format. How you take inputs and co-ordinates is entirely up to you. 
 
-The possible letters are ‘L’, ‘R’ and ‘M’. ‘L’ and ‘R’ make the robot spin 90 degrees to the left or right respectively without moving from its current spot while ‘M’ means move forward one grid point and maintain the same heading. Assume that the square directly North from (x, y) is (x, y+1).
+The possible letters are â€˜Lâ€™, â€˜Râ€™ and â€˜Mâ€™. â€˜Lâ€™ and â€˜Râ€™ make the robot spin 90 degrees to the left or right respectively without moving from its current spot while â€˜Mâ€™ means move forward one grid point and maintain the same heading. Assume that the square directly North from (x, y) is (x, y+1).
 
 ## Input ##
 
 The first line of input is the upper-right coordinates of the arena, the lower-left coordinates are assumed to be (0, 0).
 
-The rest of the input is information pertaining to the robots that have been deployed. Each robot has two lines of input - the first gives the robot’s position and the second is a series of instructions telling the robot how to move within the arena.
+The rest of the input is information pertaining to the robots that have been deployed. Each robot has two lines of input - the first gives the robotâ€™s position and the second is a series of instructions telling the robot how to move within the arena.
 
-The position is made up of two integers and a letter separated by spaces, corresponding to the x and y coordinates and the robot’s orientation. Each robot will finish moving sequentially, which means that the second robot won’t start to move until the first one has finished moving.
+The position is made up of two integers and a letter separated by spaces, corresponding to the x and y coordinates and the robotâ€™s orientation. Each robot will finish moving sequentially, which means that the second robot wonâ€™t start to move until the first one has finished moving.
 
 ## Output ##
 

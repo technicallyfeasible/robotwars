@@ -1,3 +1,5 @@
+'use strict';
+
 var chai = require('chai');
 var assert = chai.assert;
 var Robot = require('../server/models/robot');

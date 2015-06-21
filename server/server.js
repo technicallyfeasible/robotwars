@@ -6,7 +6,7 @@ var cors = require('cors');
 var bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 
-var port = 8080;
+var port = process.env.PORT || 3000;
 
 var app = module.exports = express();
 app.use(cors());

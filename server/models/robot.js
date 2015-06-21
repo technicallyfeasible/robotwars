@@ -1,3 +1,5 @@
+'use strict';
+
 // movement table based on facing direction
 var movement = [
 	{x: 0, y: 1},	// North

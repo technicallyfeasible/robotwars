@@ -1,3 +1,5 @@
+'use strict';
+
 var chai = require('chai');
 var assert = chai.assert;
 var Arena = require('../server/models/arena');

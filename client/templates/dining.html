@@ -2,7 +2,7 @@
 	<div class="row spc-b">
 		<div class="col col-xs-12">
 			<h2>Seat the Diner</h2>
-			<span>Guide each diner to their table without collisions. The table each diner needs to go to is marked with the corresponding number.</span>
+			<span>Guide each diner to their table without collisions. The table each diner needs to go to is marked with the corresponding number. Diners are initially facing EAST.</span>
 		</div>
 	</div>
 
@@ -25,20 +25,22 @@
 		</div>
 	</div>
 
-	<div class="row spc-b">
-		<div class="col col-xs-12 col-md-6">
-			<div ng-repeat="diner in diners">
-				<label>Diner {{$index + 1}}</label>
-				<input type="text" class="form-control" ng-model="diner.moves"/>
+	<form ng-submit="run()">
+		<div class="row spc-b">
+			<div class="col col-xs-12 col-md-6">
+				<div ng-repeat="diner in diners">
+					<label>Diner {{$index + 1}}</label>
+					<input type="text" class="form-control" ng-model="diner.moves"/>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="row">
-		<div class="col col-xs-12">
-			<div class="btn btn-default" ng-click="create()" ng-disable="isRunning">new</div>
-			<div class="btn btn-default" ng-click="run()" ng-disable="isRunning">GO!</div>
+		<div class="row">
+			<div class="col col-xs-12">
+				<div class="btn btn-default" ng-click="create()" ng-disable="isRunning">new</div>
+				<input type="submit" class="btn btn-default btn-primary" value="GO!" ng-disable="isRunning"/>
+			</div>
 		</div>
-	</div>
+	</form>
 
 </div>
