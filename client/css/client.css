@@ -6,13 +6,25 @@ body {
 }
 
 
+.arena {
+	display: inline-block;
+	border: 1px solid #222;
+}
+.arena .line:not(:last-child) {
+	border-bottom: 1px solid #222;
+}
+.arena .box:not(:last-child) {
+	border-right: 1px solid #222;
+}
 .arena .line {
 	white-space: nowrap;
-	line-height: 0;
+	line-height: 10px;
 }
 .arena .box {
 	display: inline-block;
 	width: 30px;
 	height: 30px;
-	border: 1px solid #222;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
 }

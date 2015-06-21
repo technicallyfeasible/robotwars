@@ -14,7 +14,7 @@
 			<select ng-options="n for n in dinerOptions" ng-model="dinerCount"></select>
 		</div>
 		<div class="col col-xs-6">
-			<arena size="size"></arena>
+			<arena size="size" labels="labels"></arena>
 		</div>
 	</div>
 
@@ -36,8 +36,8 @@
 
 	<div class="row">
 		<div class="col col-xs-12">
-			<div class="btn btn-default" ng-click="create()">new</div>
-			<div class="btn btn-default" ng-click="run()">GO!</div>
+			<div class="btn btn-default" ng-click="create()" ng-disable="isRunning">new</div>
+			<div class="btn btn-default" ng-click="run()" ng-disable="isRunning">GO!</div>
 		</div>
 	</div>
 

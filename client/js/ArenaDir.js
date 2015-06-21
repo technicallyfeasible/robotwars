@@ -8,34 +8,49 @@ app.directive("arena", function() {
 		restrict: "E",
 		templateUrl: "templates/arena.html",
 		scope: {
-			size: "=size",
-			diners: "=diners"
+			size: "&size",
+			labels: "&labels"
 		},
 		controller: function($scope) {
 
+			var getLabel = function(x, y) {
+				var labels = $scope.labels();
+				if (!labels) return;
+				for (var i = 0; i < labels.length; i++) {
+					if (labels[i].x === x && labels[i].y === y)
+						return labels[i];
+				}
+				return { label: "" };
+			};
+
 			/**
 			 * Creates a 2-dimensional array which represents the arena
-			 * @param size
 			 */
-			var draw = function(size) {
+			var draw = function(newVal, oldVal) {
+				if (newVal === oldVal)
+					return;
 				// run coordinates from top to bottom since this is how the grid is supposed to be layed out
+				var size = $scope.size();
 				$scope.rows = [];
 				for (var y = size - 1; y >= 0; y--) {
 					var row = [];
 					$scope.rows.push(row);
 					for (var x = 0; x < size; x++) {
-						for (var i = 0; i < $scope.diners.length; i++) {
-
-						}
+						var label = getLabel(x, y);
 						row.push({
-							label: ""
+							label: label.label,
+							style: {
+								backgroundColor: label.color || ""
+							}
 						});
 					}
 				}
 			};
+			draw($scope.size);
 
-			// watch size and redraw on change
-			$scope.$watch("size", draw);
+			// watch size and labels and redraw on change
+			$scope.$watch("labels()", draw);
+			$scope.$watch("size()", draw);
 		}
 	};
 });

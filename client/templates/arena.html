@@ -1,6 +1,6 @@
 <div class="arena">
 	<div ng-repeat="row in rows" class="line">
-		<div ng-repeat="cell in row" class="box">
+		<div ng-repeat="cell in row" class="box" ng-style="cell.style">
 			{{cell.label}}
 		</div>
 	</div>
