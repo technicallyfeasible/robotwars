@@ -2,7 +2,7 @@
 
 var chai = require('chai');
 var assert = chai.assert;
-var game = require('../server/controllers/game');
+var game = require('../server/managers/game');
 
 describe('Game', function() {
 

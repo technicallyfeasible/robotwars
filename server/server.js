@@ -13,7 +13,13 @@ var port = process.env.PORT || 3000;
 var app = module.exports = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use(expressValidator());
+app.use(expressValidator({
+	customValidators: {
+		isArray: function(value) {
+			return Array.isArray(value);
+		}
+	}
+}));
 app.use(require('./api'));
 
 // serve static client content for testing in dev environment
