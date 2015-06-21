@@ -104,6 +104,11 @@ describe('Robot', function() {
 		robot.move('M');
 		assert.strictEqual(robot.arena.x, 0);
 		assert.strictEqual(robot.arena.y, 0);
+		// place facing west at 0,0 and move
+		robot.place(arena, 0, 0, 3);
+		robot.move('M');
+		assert.strictEqual(robot.arena.x, 0);
+		assert.strictEqual(robot.arena.y, 0);
 	});
 
 });

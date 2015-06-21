@@ -15,11 +15,14 @@
     <file url="file://$PROJECT_DIR$/package.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/api/arena.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/api/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/api/transform.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/controllers/game.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/models/arena.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/models/robot.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/server.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/api.spec.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/arena.spec.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/game.spec.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/robot.spec.js" charset="UTF-8" />
   </component>
 </project>

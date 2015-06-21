@@ -11,7 +11,7 @@ app.service("ApiSvc", ["$http", function($http) {
 		run: function(size, diners) {
 			return $http.post(base + "/arena/run", {
 				arena: {
-					width: size, height: size
+					top: size - 1, right: size - 1
 				},
 				robots: diners
 			})

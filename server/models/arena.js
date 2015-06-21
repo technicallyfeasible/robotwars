@@ -1,7 +1,5 @@
 'use strict';
 
-var Robot = require('./robot');
-
 var Arena = function(width, height) {
 	if (!width || width < 0 || !height || height < 0) {
 		throw new Error('Width and height must be greater than zero');

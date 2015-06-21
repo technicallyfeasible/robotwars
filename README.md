@@ -10,11 +10,14 @@ Install dependencies
 Serve application
 
 	gulp
-	-> [http://localhost:3000/](http://localhost:3000/)
+
+API
+
+[http://localhost:3000/](http://localhost:3000/)
 	
 Dev interface for playing:
 
-	[http://localhost:3000/dev/index.html](http://localhost:3000/dev/index.html)
+[http://localhost:3000/dev/index.html](http://localhost:3000/dev/index.html)
 
 
 

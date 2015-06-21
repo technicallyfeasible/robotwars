@@ -75,7 +75,6 @@ Robot.prototype.move = function(commands) {
 				break;
 			default:
 				throw new Error('Unknown command: ' + c);
-				break;
 		}
 	}
 };

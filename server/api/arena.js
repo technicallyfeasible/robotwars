@@ -1,9 +1,11 @@
 'use strict';
 
-var winston = require('winston');
 var express = require('express');
+/* eslint-disable new-cap */
 var router = express.Router();
+/* eslint-enable new-cap */
 
+var transform = require('./transform');
 var game = require('../controllers/game');
 
 /**
@@ -20,7 +22,14 @@ router.post('/run', function arenaRun(req, res) {
 		return;
 	}
 
-	var result = game.run(req.body);
+	// transform request
+	// convert top / right arena corner to width / height
+	// convert robot heading N,E,S,W to 0-3
+	var body = req.body;
+	body.arena = transform.toArena(body.arena);
+	body.robots = body.robots.map(transform.toRobot);
+
+	var result = game.run(body);
 
 	// serialize final positions of robots from arena
 	res.status(200).json(result);

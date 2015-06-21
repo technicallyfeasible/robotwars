@@ -5,9 +5,9 @@
  */
 app.controller("DiningCtrl", ["$scope", "ApiSvc", function($scope, api) {
 
-	$scope.sizeOptions = [3, 5, 7, 9];
+	$scope.sizeOptions = [4, 6, 8, 10];
 	$scope.dinerOptions = [2, 3, 4, 5];
-	$scope.size = 3;
+	$scope.size = 4;
 	$scope.dinerCount = 2;
 	$scope.isRunning = false;
 
@@ -35,7 +35,7 @@ app.controller("DiningCtrl", ["$scope", "ApiSvc", function($scope, api) {
 				diners.push({
 					x: 0,
 					y: startY,
-					dir: 1,
+					dir: 'E',
 					moves: ""
 				});
 			}
@@ -87,7 +87,7 @@ app.controller("DiningCtrl", ["$scope", "ApiSvc", function($scope, api) {
 		$scope.diners.forEach(function(diner) {
 			diner.x = 0;
 			diner.y = parseInt($scope.size / 2);
-			diner.dir = 1;
+			diner.dir = 'E';
 		});
 		// run through the api and display response
 		api.run($scope.size, $scope.diners).success(function(res) {
