@@ -35,7 +35,7 @@ describe('Arena API', function() {
 	it('returns error if robots are missing', function(done) {
 		agent.post('/arena/run')
 			.send({
-				arena: { right: 5, top: 5 },
+				arena: { right: 5, top: 5 }
 				//robots: []
 			})
 			.set('Accept', 'application/json')
