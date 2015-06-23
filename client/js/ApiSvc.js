@@ -3,19 +3,22 @@
 /**
  * Controls the arena
  */
-app.service("ApiSvc", ["$http", function($http) {
+define(["app"], function(app) {
 
-	var base = "";
+	app.service("ApiSvc", ["$http", function ($http) {
 
-	return {
-		run: function(size, diners) {
-			return $http.post(base + "/arena/run", {
-				arena: {
-					top: size - 1, right: size - 1
-				},
-				robots: diners
-			})
-		}
-	};
-}]);
+		var base = "";
 
+		return {
+			run: function (size, diners) {
+				return $http.post(base + "/arena/run", {
+					arena: {
+						top: size - 1, right: size - 1
+					},
+					robots: diners
+				})
+			}
+		};
+	}]);
+
+});

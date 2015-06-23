@@ -1,0 +1,11 @@
+{
+  "name": "RobotWars",
+  "private": "true",
+  "dependencies": {
+    "requirejs": "~2.1.18",
+    "angular": "~1.4.1",
+    "angular-mocks": "~1.4.1",
+    "lodash": "~3.9.3",
+    "angular-ui-router": "~0.2.15"
+  }
+}

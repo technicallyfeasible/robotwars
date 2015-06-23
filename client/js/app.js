@@ -1,13 +1,18 @@
-var app = angular.module("app", ["ui.router"]);
+define(["angular", "angular-ui-router"], function(angular) {
 
-app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
-	$stateProvider.state("/", {
-		templateUrl: "templates/dining.html",
-		controller: "DiningCtrl"
-	});
-	$urlRouterProvider.otherwise("/");
-}]);
+	var app = angular.module("app", ["ui.router"]);
 
-app.run(["$rootScope", "$state", function ($rootScope, $state) {
-	$state.go("/");
-}]);
+	app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
+		$stateProvider.state("/", {
+			templateUrl: "templates/dining.html",
+			controller: "DiningCtrl"
+		});
+		$urlRouterProvider.otherwise("/");
+	}]);
+
+	app.run(["$rootScope", "$state", function ($rootScope, $state) {
+		$state.go("/");
+	}]);
+
+	return app;
+});
