@@ -12,8 +12,9 @@ describe("DiningCtrl", function() {
 			});
 		}));
 
-		it("is cool", function () {
-			expect(1).toEqual(1);
+		it("allows selection of different sizes", function () {
+			expect(scope.sizeOptions).not.toBeUndefined();
+			expect(scope.sizeOptions.length).toEqual(4, "number of options");
 		});
 	});
 
