@@ -1,6 +1,6 @@
 describe("DiningCtrl", function() {
 
-	define(["angular-mocks", "js/DiningCtrl"], function() {
+	require(["angular-mocks", "js/DiningCtrl"], function() {
 		beforeEach(module("app"));
 
 		var diningCtrl, scope;
@@ -16,6 +16,7 @@ describe("DiningCtrl", function() {
 			expect(scope.sizeOptions).not.toBeUndefined();
 			expect(scope.sizeOptions.length).toEqual(4, "number of options");
 		});
+
 	});
 
 });
