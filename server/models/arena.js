@@ -1,5 +1,7 @@
 'use strict';
 
+var Database = require('./database');
+
 var Arena = function(width, height) {
 	if (!width || width < 0 || !height || height < 0) {
 		throw new Error('Width and height must be greater than zero');
@@ -36,6 +38,13 @@ Arena.prototype.removeRobot = function(robot) {
  */
 Arena.prototype.getRobots = function() {
 	return this.robots;
+};
+
+Arena.prototype.load = function(id, done) {
+
+};
+Arena.prototype.save = function(done) {
+
 };
 
 module.exports = Arena;

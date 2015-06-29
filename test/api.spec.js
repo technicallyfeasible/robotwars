@@ -14,7 +14,26 @@ describe('Arena API', function() {
 		agent = request.agent(app);
 	});
 
+	/*it('validates csrf token', function(done) {
+		agent.post('/arena/run')
+			.send({
+				arena: { right: 5, top: 5 },
+				robots: []
+			})
+			.set('Accept', 'application/json')
+			.expect('Content-Type', /json/)
+			.expect(403)
+			.end(function(err, res) {
+				assert.isNull(err);
+				assert.isArray(res.body.errors);
+				assert.equal(res.body.errors.length, 1);
+				assert.equal(res.body.errors[0].param, 'csrf');
+				done();
+			});
+	});*/
+
 	it('returns error if arena is missing', function(done) {
+
 		agent.post('/arena/run')
 			.send({
 				//arena: { right: 5, top: 5 },
